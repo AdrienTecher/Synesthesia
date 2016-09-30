@@ -26,6 +26,7 @@ def note(freq, len, amp=1, rate=44100):
 
 t=float(input("Duration of each note in seconds: "))
 
+
 C4 = note(261.63,t,amp=10000)
 C4d = note(277.18,t,amp=10000)
 D4 = note(293.66,t,amp=10000)

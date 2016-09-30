@@ -1,9 +1,10 @@
 # -*- coding: utf-8 -*-
 """
-Created on Sat Sep 24 12:57:09 2016
+Created on Fri Sep 30 15:05:44 2016
 
 @author: Adrien
 """
+
 from PIL import Image
 from colorsys import rgb_to_hls
 
@@ -34,37 +35,10 @@ for pos_y in range(0,height,int(round(height/nb_divs))+10):
         pix_neg[pos_x,pos_y]=pixel[pos_x,pos_y]
         colors.append(int(round(color_hue_from_rgb(pixel[pos_x,pos_y])*360,0)))
         img_name="img_out/img_"+str(name_index)+".jpg"
-        #Image.new( 'RGB', (width,height), pixel[pos_x,pos_y]).save(img_name)
+        Image.new( 'RGB', (width,height), pixel[pos_x,pos_y]).save(img_name)
         name_index+=1
-
-
-#
-#
-#height, width, layers =  array("img_out/img_"+str(name_index)+".jpg").shape
-#
-## Create the OpenCV VideoWriter
-#video = cv2.VideoWriter("img_out/vid.avi", # Filename
-#                        -1, # Negative 1 denotes manual codec selection. You can make this automatic by defining the "fourcc codec" with "cv2.VideoWriter_fourcc"
-#                        10, # 10 frames per second is chosen as a demo, 30FPS and 60FPS is more typical for a YouTube video
-#                        (width,height) # The width and height come from the stats of image1
-#                        )
-#
-## We'll have 30 frames be the animated transition from image1 to image2. At 10FPS, this is a whole 3 seconds
-#for i in range(0,30):
-#    img_blend = Image.blend("img_out/img_"+str(name_index)+".jpg", "img_out/img_"+str(name_index+1)+".jpg", i/30.0)
-#
-#    # Conversion from PIL to OpenCV from: http://blog.extramaster.net/2015/07/python-converting-from-pil-to-opencv-2.html
-#    video.write(cv2.cvtColor(array(img_blend), cv2.COLOR_RGB2BGR))
-#
-## And back from image2 to image1...
-#for i in range(0,30):
-#    img_blend2 = Image.blend("img_out/img_"+str(name_index+1)+".jpg", "img_out/img_"+str(name_index)+".jpg", i/30.0)
-#    video.write(cv2.cvtColor(array(img_blend2), cv2.COLOR_RGB2BGR))
-#
-## Release the video for it to be committed to a file
-#video.release()
-
-
+        
+        
 color_names=[]
 for color in colors:
     if 355<=color or color<11:
@@ -101,5 +75,5 @@ for color in colors:
         color_names.append("pink_red")   
     else:
         color_names.append("error")
-    
-
+        
+img_neg.show()
