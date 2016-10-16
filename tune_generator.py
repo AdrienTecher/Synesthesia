@@ -13,7 +13,10 @@ from pydub import AudioSegment
 def generateInstrumentTune(name,color_names, color_note):
     """
     name: name of created wav file
-    color_names: array of 
+    color_names: list of color names (str)
+    color_note : dictionnary that links color names to notes
+    
+    Creates a wav file containing the generated song
     """
     tune = AudioSegment.silent()
     for color in color_names:
@@ -25,6 +28,13 @@ def generateInstrumentTune(name,color_names, color_note):
 # pos: 0 to add a note at the end some other integer to add note at the beginning
     
 def generateSynthTune(name,color_names, color_note):
+    """
+    name: name of created wav file
+    color_names: list of color names (str)
+    color_note : dictionnary that links color names to notes
+    
+    Creates a wav file containing the generated song
+    """
     tune=empty(0,dtype=int16)
     for color in color_names:
         tune=concatenate((tune,color_note[color]))
