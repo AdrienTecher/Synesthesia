@@ -9,7 +9,9 @@ import notes_generator as n
 import image_color_analysis as i
 import tune_generator as t
 
-color_note=n.generateSynthNotes()
+#color_note=n.generateSynthNotes()
+notes=n.generatePianoNotes()
+color_note=n.assignColorToNotes(notes)
 
 img=i.imageLoader(input("name of image: "))
 hdiv=int(input("horizontal divs: "))
@@ -21,5 +23,5 @@ color_array=i.generateColorArray(img,divs)
 
 color_names=i.colorsToColorNames(color_array)
 
-t.generateSynthTune("mu",color_names,color_note)
+t.generateInstrumentTune("mu",color_names,color_note)
 i.generateColoredPixelImage(img,divs).show()
