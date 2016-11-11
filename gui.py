@@ -10,17 +10,15 @@ master = tk.Tk()
 master.minsize(width=600, height=350)
 master.title("Synesthesia")
 
-
-#nbcol=4
-#for c in range(nbcol):
-#    tk.Label(master, text='C%s'%(c),borderwidth=1 ).grid(row=1,column=c)
-
 def captureImage():
+    """
+    Shows a webcam frame, allows to save a picture
+    """
     cam = cv2.VideoCapture(0) # video capture source camera (Here webcam of laptop) 
     while(True):
         ret,frame = cam.read() # return a single frame in variable `frame`
         cv2.imshow('img1',frame) #display the captured image
-        if cv2.waitKey(1) & 0xFF == ord('d'): #save on pressing 'y' 
+        if cv2.waitKey(1) & 0xFF == ord('d'): #save on pressing 'd' 
             cv2.imwrite('output/camera_picture.png',frame)
             cv2.destroyAllWindows()
             break
