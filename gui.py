@@ -24,7 +24,7 @@ def captureImage():
             break
     
     cam.release()
-    imagePathText.set(dir_path+"/output/camera_picture.png")
+    imagePathText.set(dir_path+"\output\camera_picture.png")
 
 
 #Image Choice Area
@@ -58,7 +58,7 @@ noteDurationText=tk.StringVar()
 noteDurationText.set("Select note duration (in seconds) :")
 noteDurationLabel= tk.Label(frameOptions,textvariable= noteDurationText).grid(padx=20,pady=10,row=3,column=1)
 noteDuration=tk.DoubleVar()
-scaleNoteDuration=tk.Scale(frameOptions,variable=noteDuration,orient=tk.HORIZONTAL,from_=0.001,to=1,resolution=0.001,length=200,state=tk.DISABLED)
+scaleNoteDuration=tk.Scale(frameOptions,variable=noteDuration,orient=tk.HORIZONTAL,from_=0.001,to=1,resolution=0.001,length=200,state=tk.ACTIVE)
 scaleNoteDuration.grid(ipady=10,row=3,column=2)
 
 
