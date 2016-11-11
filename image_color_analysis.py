@@ -21,13 +21,13 @@ def color_hue_from_rgb(rgb):
     return hls[0]
     
 
-def imageLoader(image_name):
+def imageLoader(image_path):
     """
-    image_name: the name of the image to be loaded
+    image_path: the path of the image to be loaded
     
     returns: tuple (loaded image, height of image, width of image)
     """
-    img = Image.open("img/"+image_name)
+    img = Image.open(image_path)
     return (img.load(), img.size[1], img.size[0])
     
 

@@ -51,27 +51,23 @@ def generateSynthNotes(t=1):
     
     return notes
     
-    
-    
-def generatePianoNotes():
-    """
-    returns: dictionnary that assigns color names to notes
-    """
-    dir="assets/notes/piano/"
-    color_note=[]
-    for i in range(16):
-        color_note.append(AudioSegment.from_file(dir+"piano_"+str(i)+".wav")[:380])
-    return color_note
 
-def generateTrumpetNotes():
+def generateInstrumentNotes(instrument,len=-1):
     """
     returns: dictionnary that assigns color names to notes
     """
-    dir="assets/notes/piano/"
-    color_note=[]
+    dir="assets/notes/"+instrument+"/"
+    len1=0
+    len2=-1
+    if instrument=="piano" or instrument=="trumpet":
+        len2=380
+    elif instrument=="flute":
+        len1=100
+        len2=820
+    notes=[]
     for i in range(16):
-        color_note.append(AudioSegment.from_file(dir+"piano_"+str(i)+".wav")[:380])
-    return color_note
+        notes.append(AudioSegment.from_file(dir+instrument+"_"+str(i)+".wav")[len1:len2])
+    return notes
 
 
 def assignColorToNotes(notes):
@@ -94,6 +90,5 @@ def assignColorToNotes(notes):
     
     color_note={}
     for index,color in enumerate(color_keys):
-        print(index)
         color_note[color]=notes[index]
     return color_note 
