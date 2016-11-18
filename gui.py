@@ -77,7 +77,7 @@ def scaleStatus(self):
 instrumentText=tk.StringVar()
 instrumentText.set("Choose instrument :")
 instrumentLabel= tk.Label(frameOptions,textvariable=instrumentText).grid(padx=20,row=2,column=1)
-listInstrument = tk.OptionMenu(frameOptions, instrument,"Synthesizer", "Piano", "Trumpet", "Percussion",command=scaleStatus).grid(row=2,column=2)
+listInstrument = tk.OptionMenu(frameOptions, instrument,"Synthesizer", "Piano", "Trumpet","Flute", "Percussion",command=scaleStatus).grid(row=2,column=2)
 
 
 

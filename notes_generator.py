@@ -30,25 +30,24 @@ def generateSynthNotes(t=1):
     
     returns: array of notes
     """
-    C4 = note(261.63,t,amp=10000)
-    C4d = note(277.18,t,amp=10000)
-    D4 = note(293.66,t,amp=10000)
-    D4d = note(311.13,t,amp=10000)
-    E4 = note(329.63,t,amp=10000)
-    F4 = note(349.23,t,amp=10000)
-    F4d = note(369.99,t,amp=10000)
-    G4 = note(392.00,t,amp=10000)
-    G4d = note(415.30,t,amp=10000)
-    A4 = note(440.00,t,amp=10000)
-    A4d = note(466.16,t,amp=10000)
-    B4 = note(493.88,t,amp=10000)
-    C5 = note(523.25,t,amp=10000)
-    C5d = note(554.37,t,amp=10000)
-    D5 = note(587.33,t,amp=10000)
-    D5d = note(622.25,t,amp=10000)
-    
-    notes=[C4,C4d,D4,D4d,E4,F4,F4d,G4,G4d,A4,A4d,B4,C5,C5d,D5,D5d]
-    
+    C4 = note(261.63,t,amp=10000) # Do3
+    D4 = note(293.66,t,amp=10000) # Ré3
+    E4 = note(329.63,t,amp=10000) # Mi3
+    F4 = note(349.23,t,amp=10000) # Fa3
+    G4 = note(392.00,t,amp=10000) # Sol3
+    A4 = note(440.00,t,amp=10000) # La3
+    B4 = note(493.88,t,amp=10000) # Si3
+    C5 = note(523.25,t,amp=10000) # Do4
+    D5 = note(587.33,t,amp=10000) # Ré4
+    E5 = note(659.26,t,amp=10000) # Mi4
+    F5 = note(698.46,t,amp=10000) # Fa4
+    G5 = note(783.99,t,amp=10000) # Sol4
+    A5 = note(880.00,t,amp=10000) # La4
+    B5 = note(987.77,t,amp=10000) # Si4
+    C6 = note(1046.50,t,amp=10000) # Do5
+    D6 = note(1174.66,t,amp=10000) # Ré5
+
+    notes=[C4,D4,E4,F4,G4,A4,B4,C5,D5,E5,F5,G5,A5,B5,C6,D6]
     return notes
     
 
